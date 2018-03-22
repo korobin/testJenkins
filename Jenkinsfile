@@ -4,7 +4,7 @@ node {
         sh "echo ${env.BRANCH_NAME}"
          def commitHash = checkout(scm).GIT_COMMIT
          def branch = checkout(scm).GIT_BRANCH
-         sh "echo prout : ${commitHash}"
+         sh "echo prout : ${commitHash}  ${branch}"
     }catch(e){
 }finally{
     zendTuleap branchName: 'prout', connexionSelected: 'fefefef', credentialsId: 'be005304-59f0-4b75-b819-6dc9384a6e00', idRepo: '525'
