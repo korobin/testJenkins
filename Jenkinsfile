@@ -1,5 +1,18 @@
-node {
-         def commitHash = checkout(scm).GIT_COMMIT
-         def branch = checkout(scm).GIT_BRANCH
-         sh "echo prout : ${commitHash}  ${branch}"
+pipeline {
+    agent any
+
+    environment {
+        TULEAP_GIT_COMMIT = checkout(scm).GIT_COMMIT
+        TULEAP_GIT_BRANCH  = checkout(scm).GIT_BRANCH
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'printenv'
+                  sh "echo prout : ${env.TULEAP_GIT_COMMIT}  ${env.TULEAP_GIT_BRANCH}"
+            }
+        }
+    }
 }
+
