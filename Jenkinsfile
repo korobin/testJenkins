@@ -4,7 +4,5 @@ node {
   sh "echo prout : ${commitHash}  ${branch}"
       shortCommit = sh(returnStdout: true, script: "git rev-parse HEAD")
      sh "echo yolo :  ${shortCommit}"
-      gitbranch = sh(returnStdout: true, "git branch -f ${shortCommit}")
-      sh "echo yolo :  ${gitbranch}"
          aaaSendTuleap branchName: 'bhng', connexionSelected: '', idRepo: '12'
 }
