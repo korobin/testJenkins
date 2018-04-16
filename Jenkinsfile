@@ -4,5 +4,5 @@ node {
   sh "echo prout : ${commitHash}  ${branch}"
       shortCommit = sh(returnStdout: true, script: "git rev-parse HEAD")
      sh "echo yolo :  ${shortCommit}"
-         tuleapPulisher credentialsId: '', repositoryId: '1547', result: 'ABORTED', selectedConnection: 'test'
+         tuleapPublisher credentialsId: '', repositoryId: '1547', result: 'ABORTED', selectedConnection: 'test'
 }
