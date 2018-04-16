@@ -10,10 +10,10 @@ pipeline {
     }
     post { 
         failure { 
-            tuleapPulisher credentialsId: '', repositoryId: '125', result: 'FAIL', selectedConnection: 'test'
+            tuleapPublisher credentialsId: '', repositoryId: '125', result: 'FAIL', selectedConnection: 'test'
         }
              success{
-                 tuleapPulisher credentialsId: '', repositoryId: '125', result: 'SUCCESS', selectedConnection: 'test'
+                 tuleapPublisher credentialsId: '', repositoryId: '125', result: 'SUCCESS', selectedConnection: 'test'
              }
     }
 }
